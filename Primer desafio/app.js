@@ -67,11 +67,11 @@ for (let i = 0; i < notasAlumnos.length; i++) {
 //Metodo para buscar una nota
 if (!notasAlumnos.includes(5) ) {
 
-    console.log("No hay una nota 5");
+    alert("Buscando por el metodo includes la nota 5. No hay una nota 5");
 
 } else {
 
-    console.log("Hay alumnos con nota 5");
+    alert("Buscando por el metodo includes la nota 5. Hay alumnos con nota 5");
 
 }
 
