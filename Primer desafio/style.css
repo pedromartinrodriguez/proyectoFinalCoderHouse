@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+header{
+    background-color: #FAF7F2;
+}
+
+form{
+    background-color: #faf7f3;
+}
+form .alumnos{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form label{
+    width: 70%;
+}
+
+form input{
+    width: 70%;
+}
+
+.notaPromedio{
+    background-color: #FAF7F5;
+}
