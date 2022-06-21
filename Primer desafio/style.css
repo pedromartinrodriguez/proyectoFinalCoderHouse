@@ -2,7 +2,39 @@
     box-sizing: border-box;
 }
 header{
-    background-color: #FAF7F2;
+    background-color: #ffffff;
+}
+
+#container-header{
+    display: flex;
+}
+
+#logo{
+    border: 1px solid red;
+}
+#logo img{
+    border: 1px solid rgb(151, 89, 82);
+    width: 120px;
+    height: 120px;
+}
+
+header nav{
+    width: 100%;
+    margin: auto;
+}
+header nav ul{
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li{
+    list-style: none;
+}
+
+#titulo-profesores{
+    text-align: center;
+    text-decoration: underline solid;
 }
 
 form{

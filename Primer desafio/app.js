@@ -1,5 +1,27 @@
+//alert("Calculador de nota final de alumnos ingresados");
 
-alert("Calculador de nota final de alumnos ingresados");
+//Defino array de cursos
+const cursos = [{id: 1, nombre: "React", turno: "Noche", precio: 15000}, 
+    {id: 2, nombre: "Phyton", turno: "Tarde", precio: 12500},
+    {id: 1, nombre: "Javascript", turno: "Noche", precio: 8000},
+    {id: 1, nombre: "Base de datos", turno: "Tarde", precio: 25000}]; 
+
+//Creando elemento p
+let tituloCursos = document.createElement("h2");
+tituloCursos.innerHTML = "<h2>Que cursos dictamos en Edu Code?</h2>";
+
+//Creando elementos desde objetos
+for (const curso of cursos) {
+    let container = document.createElement("div");
+
+    container.innerHTML = `
+        <ul>
+            <li>Curso: ${curso.nombre}</li>
+            <li>Turno: ${curso.turno}</li>
+            <li>Precio: ${curso.precio}</li>
+        </ul>`;
+    document.body.appendChild(container);
+}
 
 class Alumno {
     constructor(nombre, curso, nota) {
