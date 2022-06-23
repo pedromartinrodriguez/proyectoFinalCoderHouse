@@ -56,6 +56,14 @@ form input{
     width: 70%;
 }
 
+.error-formulario{
+    border: 1px solid red;
+}
+
+.ok-formulario{
+    border: 1px solid green;
+}
+
 .notaPromedio{
     background-color: #FAF7F5;
 }

@@ -1,3 +1,4 @@
+
 //alert("Calculador de nota final de alumnos ingresados");
 
 //Defino array de cursos
@@ -23,6 +24,9 @@ for (const curso of cursos) {
     document.body.appendChild(container);
 }
 
+
+
+
 class Alumno {
     constructor(nombre, curso, nota) {
         this.nombre = nombre;
@@ -31,7 +35,8 @@ class Alumno {
     }
 }
 
-const alumno1 = new Alumno(
+
+/*const alumno1 = new Alumno(
     prompt("Ingrese el nombre del primer alumno"),
     prompt("Ingrese su curso"),
     Number(prompt("Ingrese su nota final"))
@@ -50,19 +55,35 @@ const alumno4 = new Alumno(
     prompt("Ingrese el nombre del cuarto alumno"),
     prompt("Ingrese su curso"),
     Number(prompt("Ingrese su nota final"))
-);
+);*/
 
 
-const alumnos = [alumno1, alumno2, alumno3, alumno4];
+const alumnos = [];
+
+let form = document.getElementById("form");
+form.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault();
+    let form = e.target;
+    alumnos.push(form.children)
+    console.log(form.children[0]);
+    console.log(form.children[1]);
+    console.log(form.children[2]);
+    
+}
+
+
+
 
 console.log(alumnos);
 
-const notasAlumnos = [alumno1.nota, alumno2.nota, alumno3.nota, alumno4.nota];
+const notasAlumnos = [];
 
 console.log(notasAlumnos);
 
 
-if ((alumno1.nota < 0 || alumno2.nota < 0 || alumno3.nota < 0 || alumno4.nota < 0) || alumno1.nota > 10 || alumno2.nota > 10 || alumno3.nota > 10 || alumno4.nota > 10) {
+/*if ((alumno1.nota < 0 || alumno2.nota < 0 || alumno3.nota < 0 || alumno4.nota < 0) || alumno1.nota > 10 || alumno2.nota > 10 || alumno3.nota > 10 || alumno4.nota > 10) {
 
     alert("Recuerde que las notas deben ser estar entre el 0 y el 10")
 
@@ -78,7 +99,7 @@ if ((alumno1.nota < 0 || alumno2.nota < 0 || alumno3.nota < 0 || alumno4.nota < 
 
     }
 
-}
+}*/
 
 for (let i = 0; i < notasAlumnos.length; i++) {
     
@@ -87,7 +108,7 @@ for (let i = 0; i < notasAlumnos.length; i++) {
 }
 
 //Metodo para buscar una nota
-if (!notasAlumnos.includes(5) ) {
+/*if (!notasAlumnos.includes(5) ) {
 
     alert("Buscando por el metodo includes la nota 5. No hay una nota 5");
 
@@ -115,4 +136,50 @@ if (notasAprobadas) {
 }
 
 //Arrojar la nota promedio del total
-alert("La nota promedio es: " + promedio());
+//alert("La nota promedio es: " + promedio());
+*/
+
+// Agregando evento change al formulario
+
+const inputName = document.querySelector(".name");
+const inputCurso = document.querySelector(".curso");
+const inputNota = document.querySelector(".nota");
+
+inputName.addEventListener('change', () => {
+
+    if (inputName.value.length <= 5) {
+        alert("El nombre debe tener al menos 6 caracteres")
+        inputName.classList.add('error-formulario')
+        inputName.classList.remove('ok-formulario')
+    } else {
+        inputName.classList.add('ok-formulario')
+        inputName.classList.remove('error-formulario')
+    }
+
+})
+
+inputCurso.addEventListener('change', () => {
+
+    if(inputCurso.value.length <= 3) {
+        alert("El curso debe tener al menos 4 caracteres")
+        inputCurso.classList.add('error-formulario')
+        inputCurso.classList.remove('ok-formulario')
+    } else {
+        inputCurso.classList.add('ok-formulario')
+        inputCurso.classList.remove('error-formulario')
+    }
+
+})
+
+inputNota.addEventListener('change', () => {
+
+    if(inputNota.value <= 0 || inputNota.value > 10) {
+        alert("La nota debe estar entre 0 y 10")
+        inputNota.classList.add('error-formulario')
+        inputNota.classList.remove('ok-formulario')
+    } else {
+        inputNota.classList.add('ok-formulario')
+        inputNota.classList.remove('error-formulario')
+    }
+
+})
