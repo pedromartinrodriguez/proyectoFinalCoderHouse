@@ -6,8 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio Entregable Nro 1</title>
+    <link rel="stylesheet" href="public/css/contenedor-productos.css">
     <link rel="stylesheet" href="public/css/style.css">
-
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <script defer src="cursos.js"></script>
+    <script defer src="modal.js"></script>
+    <script defer src="app.js"></script>
 </head>
 
 <body>
@@ -22,7 +26,10 @@
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#cursos">Cursos</a></li>
                     <li><a href="#empleos">Empleos</a></li>
-                    <li><a href="#profesores">Acceso Profesores</a></li>
+                    <li><a href="profesores.html" target="_blank">Acceso Profesores</a></li>
+                    <li>
+                        <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button> 
+                        </li>
                 </ul>
             </nav>
         </div>
@@ -31,79 +38,78 @@
 
 
     <section>
-        <h3 id="nosotros">Sobre Edu Code</h3>
+
+        <div id="container-nosotros">
+            <img src="public/imagenes/nosotros2.jpg" alt="">
+            <p>Conoce EDUCODE</p>
+        </div>
+
+        <div id="descripcion-nosotros">
+            <h3 id="nosotros">Sobre Edu Code</h3>
+
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet reprehenderit
             quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
             atque eos?</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus consectetur, aut illum maxime
             laudantium perferendis nulla odio itaque delectus aspernatur, cumque natus eaque dolorem alias similique
             quaerat ipsum ad expedita.
-            Similique quia ab doloremque praesentium, ut quas optio distinctio tempora quis magni aspernatur impedit
-            sequi placeat aliquid alias voluptates qui eius at sunt explicabo. Culpa tenetur quis omnis possimus iusto?
-            Possimus nesciunt expedita similique doloribus corporis blanditiis velit iusto quasi consequuntur voluptate
-            alias voluptatibus inventore ipsum, pariatur cumque illum? Enim minus illo doloribus ut exercitationem
-            maiores modi quaerat temporibus accusamus?
-            Quisquam iste molestias error beatae, modi asperiores veniam perferendis dolores aut totam vel quas
-            accusamus ab distinctio. Ut velit voluptatum modi pariatur commodi aut in voluptates, at eius itaque
-            corporis!
-            Recusandae, est incidunt corrupti ipsam repudiandae nihil vitae, asperiores consequatur porro rerum officia
-            nobis deleniti, cumque eligendi autem veritatis dolorum sequi! Vero, libero. Rem repudiandae accusamus velit
-            at. Accusantium, architecto!
-            Dignissimos impedit dolorum inventore repellat blanditiis nostrum recusandae magnam vero quaerat autem optio
-            ab fuga eaque exercitationem reiciendis iusto, quia tenetur. Ut optio animi harum doloribus, odit placeat
-            necessitatibus eligendi.
-            Provident cupiditate molestiae quisquam cumque culpa in nulla aut distinctio! Dolor esse ut reprehenderit
-            quasi voluptatem porro. Voluptatibus quod at odio corporis quia quam, quae quibusdam quas laudantium atque
-            ipsum!
-            Totam, ducimus temporibus fugit vel porro earum quos atque veniam ipsa quibusdam eius laboriosam assumenda
-            suscipit odit impedit consequatur officiis ratione animi quam eaque a quis natus culpa voluptas! Beatae.
-            Placeat dolor voluptatum, sapiente magnam ad illo quod libero! Sequi beatae, exercitationem aperiam
-            consequatur officiis nemo fugiat cum praesentium tempore sunt, qui aspernatur accusamus explicabo magnam
-            minima nam consequuntur quisquam!
-            i similique quidem exercitationem! Soluta accusamus eos exercitationem voluptas inventore id quae nihil,
-            aliquam dolores odio, perspiciatis eius neque, quisquam suscipit labore recusandae.
-            Iste, adipisci? Libero nemo architecto iure quod minima doloremque omnis numquam debitis porro eius saepe
-            repudiandae dolores ullam in pariatur sapiente dolor vitae, rem veritatis culpa qui odit itaque sed!</p>
+        </p>
+        </div>
+        
     </section>
 
 
-
     <section>
-        <h3 id="cursos">Que cursos tenemos?</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda tempore, voluptatem inventore quisquam
-            tenetur dolor provident magnam dolorum ratione est alias officia nemo illum reprehenderit nam voluptate
-            neque odio? Id.</p>
+
+        <div id="container-cursos">
+            <img src="public/imagenes/cursos2.jpg" alt="">
+            <p>Cursos EDUCODE</p>
+        </div>
+
+        <div id="descripcion-cursos">
+            <h3 id="cursos">Potencia tu cambio</h3>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet reprehenderit
+            quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
+            atque eos?</p>            
+        </div>
+
+
+
+       
+        
+        
+        <main id="contenedor-productos">
+             
+        </main>
+
+
+        <div class="modal-contenedor">
+            <div class="modal-carrito">
+                <h3>Carrito</h3>
+                <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+                <div id="carrito-contenedor">
+    
+                </div>
+                <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+                <button id="vaciarCarrito" class="boton-eliminar">Vaciar carrito</button>
+            </div>
+        </div>
+
     </section>
 
-    <section>
+        <section>
         <h3 id="empleos">Bolsa de trabajo</h3>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda tempore, voluptatem inventore quisquam
             tenetur dolor provident magnam dolorum ratione est alias officia nemo illum reprehenderit nam voluptate
             neque odio? Id.</p>
     </section>
-    <section>
-        <h3 id="profesores">Acceso a profesores</h3>
-        <p>Ingrese los datos de los alumnos</p>
-    </section>
 
 
-    <form action="" id="form">
-        <div class="alumnos">
-            <h3>Alumno</h3>
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" class="name">
-            <label for="curso">Curso:</label>
-            <input type="text" name="curso" class="curso">
-            <label for="nota">Nota:</label>
-            <input type="number" name="nota" class="nota">
-
-        </div>
     
-        <button type="submit">Aceptar</button>
-    </form>
+    
 
 
-    <script src="app.js"></script>
 </body>
 
 </html>

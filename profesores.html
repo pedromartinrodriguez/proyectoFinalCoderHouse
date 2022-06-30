@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Entregable Nro 1</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/profesores.css">
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
+    <script defer src="profesores.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="container-header">
+            <div id="logo">
+                <img src="public/imagenes/Logo.png" alt="Imagen logo">
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#empleos">Empleos</a></li>
+                    <li><a href="#profesores">Acceso Profesores</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <section>
+        <h3 id="profesores">Acceso a profesores</h3>
+        <p>Ingrese los datos del nuevo alumno</p>
+    </section>
+
+    <form action="" id="form" name="form">
+        <div class="alumnos">
+            <h3>Alumno</h3>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="name">
+            <label for="curso">Curso:</label>
+            <input type="text" name="curso" id="curso">
+            <label for="nota">Nota:</label>
+            <input type="number" name="nota" id="nota">
+
+        </div>
+
+
+        <button id="btn-form" type="submit" onclick="obtenerDatos()">Agregar Alumno</button>
+    </form>
+
+    <main id="contenedor-alumnos">
+        <h2>Alumnos cargados en sistema</h2>
+    </main>
+
+    <main id="nota-promedio">
+        
+    </main>
+
+</body>
+
+</html>
