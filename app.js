@@ -5,9 +5,11 @@ const contadorCarrito = document.querySelector("#contadorCarrito");
 const precioTotal = document.querySelector("#precioTotal");
 const botonVaciarCarrito = document.querySelector("#vaciarCarrito");
 
-let carrito = [];
+let carrito;
 
+const carritoEnLS = JSON.parse(localStorage.getItem("carrito"));
 
+//GENERAR EL DOM DE TODOS LOS CURSOS
 cursos.forEach((curso) => {
     const div = document.createElement('div');
     div.classList.add('curso');
@@ -29,8 +31,10 @@ cursos.forEach((curso) => {
 
 // FUNCION QUE ITERA SOBRE EL ARRAY, COMPARANDO SI ES IGUAL EL ID DE UN CURSO DEL ARRAY CON EL ID POR PARAMETRO
 const agregarAlCarrito = (id) => {
-    let item = cursos.find( (curso) => curso.id === id );
+    let item = cursos.find((curso) => curso.id === id);
     carrito.push(item);
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 
     console.log(carrito);
     renderCarrito();
@@ -43,6 +47,8 @@ const removerDelCarrito = (id) => {
     const indice = carrito.indexOf(itemABorrar);
     carrito.splice(indice, 1);
 
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
     renderCarrito();
     renderCantidadCarrito();
     renderPrecioTotal();
@@ -50,6 +56,8 @@ const removerDelCarrito = (id) => {
 
 const vaciarCarrito = () => {
     carrito = []
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 
     renderCarrito();
     renderCantidadCarrito();
@@ -86,6 +94,19 @@ const renderPrecioTotal = () => {
     })
 
     precioTotal.innerText = total;
+}
+
+if (carritoEnLS) {
+    carrito = carritoEnLS;
+
+    renderCarrito()
+    renderCantidadCarrito()
+    renderPrecioTotal()
+
+} else {
+
+    carrito = []
+    
 }
 
 
