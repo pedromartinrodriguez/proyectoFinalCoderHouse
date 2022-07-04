@@ -5,9 +5,9 @@ const contadorCarrito = document.querySelector("#contadorCarrito");
 const precioTotal = document.querySelector("#precioTotal");
 const botonVaciarCarrito = document.querySelector("#vaciarCarrito");
 
-let carrito;
 
-const carritoEnLS = JSON.parse(localStorage.getItem("carrito"));
+// OPERADOR LOGICO OR (||)
+const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 //GENERAR EL DOM DE TODOS LOS CURSOS
 cursos.forEach((curso) => {
@@ -96,18 +96,11 @@ const renderPrecioTotal = () => {
     precioTotal.innerText = total;
 }
 
-if (carritoEnLS) {
-    carrito = carritoEnLS;
 
     renderCarrito()
     renderCantidadCarrito()
     renderPrecioTotal()
 
-} else {
-
-    carrito = []
-    
-}
 
 
 

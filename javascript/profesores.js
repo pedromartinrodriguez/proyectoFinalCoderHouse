@@ -60,9 +60,9 @@ function validarFormulario(e) {
     e.preventDefault();
     let form = e.target;
     alumnos.push(form.children)
-    console.log(form.children[0]);
-    console.log(form.children[1]);
-    console.log(form.children[2]);
+    //console.log(form.children[0]);
+    //console.log(form.children[1]);
+    //console.log(form.children[2]);
 
 }
 
@@ -88,23 +88,38 @@ function obtenerDatos() {
         id: alumnos.length++,
         nombre: document.getElementById('name').value,
         curso: document.getElementById('curso').value,
-        nota: document.getElementById('nota').value
+        nota: Number(document.getElementById('nota').value)
     };
 
     if (nuevoAlumno) {
-    const div = document.createElement('div');
-    div.classList.add('alumno');
+        //DESESTRUCTURACION
+        const { nombre, curso, nota } = nuevoAlumno;
+        const div = document.createElement('div');
+        div.classList.add('alumno');
 
-    div.innerHTML = `
-                    <h3>Nombre Alumno: ${nuevoAlumno.nombre}</h3>
-                    <p>Curso: ${nuevoAlumno.curso}</p>
-                    <p>Nota: ${nuevoAlumno.nota}</p>
+        div.innerHTML = `
+                        <h3>Nombre Alumno: ${nombre}</h3>
+                        <p>Curso: ${curso}</p>
+                        <p>Nota: ${nota}</p>
     `
-    alumnosContainer.append(div);
-}
+        alumnosContainer.append(div);
+        alumnos.push(nuevoAlumno);
+        notasAlumnos.push(nota);
+    }
 
-    alumnos.push(nuevoAlumno);
     
+
+}
+console.log(alumnos);
+
+
+
+function promedio(notasAlumnos) {
+    let i = 0, summ = 0, ArrayLen = notasAlumnos.length;
+    while (i < ArrayLen) {
+        summ = summ + notasAlumnos[i++];
+    }
+    return summ / ArrayLen;
 }
 
 // CALCULADOR DE NOTA PROMEDIO
@@ -113,16 +128,8 @@ let notasAlumnos = [];
 alumnos.forEach((num) => {
     notasAlumnos.push(num.nota)
 })
+
 console.log(notasAlumnos);
-
-function promedio(notasAlumnos) {
-    let i = 0, summ = 0, ArrayLen = notasAlumnos.length;
-    while (i < ArrayLen) {
-        summ = summ + notasAlumnos[i++];
-}
-    return summ / ArrayLen;
-}
-
 let a = promedio(notasAlumnos);
 console.log(a)
 
@@ -131,12 +138,12 @@ console.log(a)
 const notaPromedio = document.querySelector("#nota-promedio");
 
 const div = document.createElement('div');
-    div.classList.add('nota');
+div.classList.add('nota');
 
-    div.innerHTML = `
+div.innerHTML = `
                     <h3>La nota promedio es: ${a}</h3>           
     `
-    alumnosContainer.append(div);
+alumnosContainer.append(div);
 
 // ALMACENAMIENTO DE ARRAY ALUMNOS EN LOCAL STORAGE
 
