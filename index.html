@@ -8,7 +8,9 @@
     <title>Desafio Entregable Nro 1</title>
     <link rel="stylesheet" href="assets/css/contenedor-productos.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <script defer src="javascript/librerias.js"></script>
     <script defer src="javascript/cursos.js"></script>
     <script defer src="javascript/modal.js"></script>
     <script defer src="app.js"></script>
@@ -28,8 +30,9 @@
                     <li><a href="#empleos">Empleos</a></li>
                     <li><a href="profesores.html" target="_blank">Acceso Profesores</a></li>
                     <li>
-                        <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button> 
-                        </li>
+                        <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span
+                                id="contadorCarrito">0</span></button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -47,15 +50,16 @@
         <div id="descripcion-nosotros">
             <h3 id="nosotros">Sobre Edu Code</h3>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet reprehenderit
-            quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
-            atque eos?</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus consectetur, aut illum maxime
-            laudantium perferendis nulla odio itaque delectus aspernatur, cumque natus eaque dolorem alias similique
-            quaerat ipsum ad expedita.
-        </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet
+                reprehenderit
+                quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
+                atque eos?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus consectetur, aut illum maxime
+                laudantium perferendis nulla odio itaque delectus aspernatur, cumque natus eaque dolorem alias similique
+                quaerat ipsum ad expedita.
+            </p>
         </div>
-        
+
     </section>
 
 
@@ -69,18 +73,19 @@
         <div id="descripcion-cursos">
             <h3 id="cursos">Potencia tu cambio</h3>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet reprehenderit
-            quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
-            atque eos?</p>            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet
+                reprehenderit
+                quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
+                atque eos?</p>
         </div>
 
 
 
-       
-        
-        
+
+
+
         <main id="contenedor-productos">
-             
+
         </main>
 
 
@@ -89,7 +94,7 @@
                 <h3>Carrito</h3>
                 <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
                 <div id="carrito-contenedor">
-    
+
                 </div>
                 <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
                 <button id="vaciarCarrito" class="boton-eliminar">Vaciar carrito</button>
@@ -98,18 +103,19 @@
 
     </section>
 
-        <section>
+    <section>
         <h3 id="empleos">Bolsa de trabajo</h3>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda tempore, voluptatem inventore quisquam
             tenetur dolor provident magnam dolorum ratione est alias officia nemo illum reprehenderit nam voluptate
             neque odio? Id.</p>
     </section>
 
+    <button id="alert">Sweet Alert</button>
+    <button id="toast">Toastify</button>
 
-    
-    
 
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

@@ -30,9 +30,23 @@ cursos.forEach((curso) => {
 
 
 // FUNCION QUE ITERA SOBRE EL ARRAY, COMPARANDO SI ES IGUAL EL ID DE UN CURSO DEL ARRAY CON EL ID POR PARAMETRO
-const agregarAlCarrito = (id) => {
-    let item = cursos.find((curso) => curso.id === id);
-    carrito.push(item);
+const agregarAlCarrito = (cursoId) => {
+
+    const itemInCart = carrito.find((curso) => curso.id === cursoId);
+
+    if (itemInCart) {
+        itemInCart.cantidad += 1
+        //LLAMO A LA FUNCION QUE MUESTRA EL TOASTIFY
+        mensajeProductoAgregado(itemInCart.nombre);
+    } else {
+        const { id, nombre, precio } = cursos.find((curso) => curso.id === cursoId)
+        const itemToCart = {
+            id, nombre, precio, cantidad: 1
+        }
+        carrito.push(itemToCart);
+        //LLAMO A LA FUNCION QUE MUESTRA EL TOASTIFY
+        mensajeProductoAgregado(nombre);
+    }
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
@@ -55,8 +69,7 @@ const removerDelCarrito = (id) => {
 }
 
 const vaciarCarrito = () => {
-    carrito = []
-
+    carrito.length = []
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
     renderCarrito();
@@ -64,7 +77,27 @@ const vaciarCarrito = () => {
     renderPrecioTotal();
 }
 
-botonVaciarCarrito.addEventListener('click', vaciarCarrito)
+
+botonVaciarCarrito.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Esta seguro?',
+        text: "Estas por vaciar el carrito!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Vaciar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            vaciarCarrito()
+            botonCerrar.click()
+            Toastify({
+                text: 'Carrito sin productos'
+            }).showToast()
+        }
+    })
+})
 
 const renderCarrito = () => {
     carritoContenedor.innerHTML = '';
@@ -75,6 +108,7 @@ const renderCarrito = () => {
 
         div.innerHTML = `
                         <p>${item.nombre}</p>
+                        <p>Cantidad: ${item.cantidad}</p>
                         <p>Precio: $${item.precio}</p>
                         <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
         `
@@ -96,10 +130,21 @@ const renderPrecioTotal = () => {
     precioTotal.innerText = total;
 }
 
+//FUNCION CLICK AGREGAR PRODUCTO
+const mensajeProductoAgregado = (curso) => {
+    Toastify({
+        text: `Se agrego 1 unidad del Curso ${curso} al carrito`,
+        duration: 3000,
+        gravity: 'bottom',
+        position: 'right',
+        //LE AGREGAS UNA CLASE PARA CSS
+        className: 'toas-producto-agregado'
+    }).showToast();
+}
 
-    renderCarrito()
-    renderCantidadCarrito()
-    renderPrecioTotal()
+renderCarrito()
+renderCantidadCarrito()
+renderPrecioTotal()
 
 
 
