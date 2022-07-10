@@ -58,8 +58,17 @@ const agregarAlCarrito = (cursoId) => {
 
 const removerDelCarrito = (id) => {
     const itemABorrar = carrito.find((curso) => curso.id === id);
-    const indice = carrito.indexOf(itemABorrar);
-    carrito.splice(indice, 1);
+    
+    itemABorrar.cantidad --
+    
+    if(itemABorrar.cantidad === 0){
+        const indice = carrito.indexOf(itemABorrar);
+        carrito.splice(indice, 1);
+    }
+
+    Toastify({
+        text: `Se elimino 1 unidad del curso ${itemABorrar.nombre}`
+    }).showToast()
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
@@ -109,7 +118,7 @@ const renderCarrito = () => {
         div.innerHTML = `
                         <p>${item.nombre}</p>
                         <p>Cantidad: ${item.cantidad}</p>
-                        <p>Precio: $${item.precio}</p>
+                        <p>Precio unitario: $${item.precio}</p>
                         <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
         `
         carritoContenedor.append(div);
@@ -118,13 +127,13 @@ const renderCarrito = () => {
 
 // ACTUALIZAR EL NUMERO DEL CARRITO
 const renderCantidadCarrito = () => {
-    contadorCarrito.innerText = carrito.length;
+    contadorCarrito.innerText = carrito.reduce((acumulador, curs) => acumulador += curs.cantidad, 0)
 }
 
 const renderPrecioTotal = () => {
     let total = 0;
     carrito.forEach((curso) => {
-        total += curso.precio
+        total += curso.precio * curso.cantidad;
     })
 
     precioTotal.innerText = total;
@@ -136,7 +145,10 @@ const mensajeProductoAgregado = (curso) => {
         text: `Se agrego 1 unidad del Curso ${curso} al carrito`,
         duration: 3000,
         gravity: 'bottom',
-        position: 'right',
+        position: 'left',
+        onClick: () => {
+          botonAbrir.click()
+        },
         //LE AGREGAS UNA CLASE PARA CSS
         className: 'toas-producto-agregado'
     }).showToast();
