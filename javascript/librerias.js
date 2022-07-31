@@ -4,14 +4,6 @@ const btnSwall = document.querySelector("#alert");
 
 btnSwall.addEventListener('click', () => {
     Swal.fire({
-        //   icon: 'success',
-        // title: 'Bienvenidos',
-        //text: 'Clase Js',
-        //footer: '<a href="">Why do I have this issue?</a>',
-        //confirmButtonText: 'Capo',
-        //timer: 2000
-        //});
-
         title: 'Seguro?',
         text: "Estas por vaciar el carrito!",
         icon: 'warning',
@@ -22,12 +14,6 @@ btnSwall.addEventListener('click', () => {
         cancelButtonText: 'Me arrepenti'
     }).then((result) => {
         if (result.isConfirmed) {
-        //    Swal.fire(
-        //        'Vaciado',
-        //        'Carrito sin productos',
-        //        'success'
-        //    )
-        //} else {
             Toastify({
                 text: 'Se vacio el carrito',
                 duration: 2500
@@ -46,8 +32,7 @@ btnToast.addEventListener('click', () => {
         duration: 2000,
         gravity: 'bottom',
         position: 'right',
-        //LE AGREGAS UNA CLASE PARA CSS
-        className: 'toas-producto-agregado'
+        className: 'toast-producto-agregado'
     }).showToast();
 
 })

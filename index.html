@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <script defer src="javascript/linkedin.js"></script>
     <script defer src="javascript/librerias.js"></script>
     <script defer src="javascript/cursos.js"></script>
     <script defer src="javascript/modal.js"></script>
@@ -28,7 +29,7 @@
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#cursos">Cursos</a></li>
                     <li><a href="#empleos">Empleos</a></li>
-                    <li><a href="profesores.html" target="_blank">Acceso Profesores</a></li>
+                    <!--<li><a href="profesores.html" target="_blank">Acceso Profesores</a></li>-->
                     <li>
                         <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span
                                 id="contadorCarrito">0</span></button>
@@ -50,38 +51,31 @@
         <div id="descripcion-nosotros">
             <h3 id="nosotros">Sobre Edu Code</h3>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet
-                reprehenderit
-                quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
-                atque eos?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus consectetur, aut illum maxime
-                laudantium perferendis nulla odio itaque delectus aspernatur, cumque natus eaque dolorem alias similique
-                quaerat ipsum ad expedita.
+            <p>Somos la nueva plataforma educativa a distancia qué te permitirá adentrarte en el mundo de la
+                programación.
+                Cada uno de nuestros cursos fue pensado para qué puedas aprender las últimas tecnologías del lenguaje.
+            </p>
+            <p>¿Quieres ser parte de este nuevo cambio de paradigma? Animate, sumate a EDUCODE!
             </p>
         </div>
 
     </section>
 
 
-    <section>
+    <section id="seccion-cursos">
 
         <div id="container-cursos">
-            <img src="assets/imagenes/cursos2.jpg" alt="">
+            <img src="assets/imagenes/nosotros1.jpg" alt="">
             <p>Cursos EDUCODE</p>
         </div>
 
         <div id="descripcion-cursos">
             <h3 id="cursos">Potencia tu cambio</h3>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita ad molestias amet
-                reprehenderit
-                quae ab vero in quibusdam explicabo, quisquam id excepturi laudantium possimus, corporis vel laboriosam
-                atque eos?</p>
+            <p>En EDUCODE podrás encontrar varios cursos, todos relacionados al mundo del Front End.
+                HTML, CSS, Javascript, Base de datos y Git! </p>
+            <p>Aprovecha tu tiempo y cursa a distancia con los mejores profesores.</p>
         </div>
-
-
-
-
 
 
         <main id="contenedor-productos">
@@ -103,17 +97,22 @@
 
     </section>
 
-    <section>
-        <h3 id="empleos">Bolsa de trabajo</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda tempore, voluptatem inventore quisquam
-            tenetur dolor provident magnam dolorum ratione est alias officia nemo illum reprehenderit nam voluptate
-            neque odio? Id.</p>
+    <section id="empleos">
+        <h3 id="titulo-empleos">Bolsa de trabajo</h3>
+        <p>Te acercamos las últimas ofertas del mundo de la programación para Argentina.
+            </p>
+            <p>¿Estás listo? Seguí en vínculo y enterate de las novedades que tiene Linkedin para vos!</p>
+        <div id="link">
+            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+            <script type="IN/Share"
+                data-url="https://www.linkedin.com/jobs/programaci%C3%B3n-empleos/?currentJobId=3190248464&originalSubdomain=ar"></script>
+        </div>
+
+
     </section>
 
-    <section>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda tempore, voluptatem inventore quisquam
-            tenetur dolor..</p>
+    <section id="seccion-contacto">
 
         <div class="form-container">
             <div class="row">
@@ -136,14 +135,19 @@
                         <textarea name="mensaje" id="" cols="20" rows="10"></textarea>
                     </div>
 
-                    <input type="submit" id="button" value="Enviar" >
+                    <input type="submit" id="button" value="Enviar">
                 </form>
-
-                
 
             </div>
         </div>
     </section>
+
+    <footer>
+        <p>Diseñado por <a href="https://www.instagram.com/soypedromartin/" target="_blank">@soypedromartin</a> |
+            Para Curso Javascript de => {<a href="https://www.instagram.com/coderhouse/?hl=es"
+                target="_blank">@coderhouse}</a></p>
+    </footer>
+
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

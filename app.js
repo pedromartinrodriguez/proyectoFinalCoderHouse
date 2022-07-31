@@ -17,9 +17,9 @@ cursos.forEach((curso) => {
     div.innerHTML = `
                 <img src="${curso.img}" alt="">
                 <h3>${curso.nombre}</h3>
-                <p>${curso.tipo}</p>
-                <p>${curso.turno}</p>
-                <p>Talle: ${curso.desc}</p>
+                <p>Área: ${curso.tipo}</p>
+                <p>Turno: ${curso.turno}</p>
+                <p>Temática: ${curso.desc}</p>
                 <p class="precioProducto">Precio: $${curso.precio}</p>
                 <button onclick="agregarAlCarrito(${curso.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
             `

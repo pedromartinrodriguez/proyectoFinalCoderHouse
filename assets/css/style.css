@@ -50,6 +50,7 @@ header nav ul li a{
 
 #container-nosotros img{
     width: 50%;
+    height: 300px;
     border-radius: 5px;
 }
 
@@ -80,6 +81,10 @@ header nav ul li a{
 
 /*CURSOS*/
 
+#seccion-cursos{
+    background-color: rgb(248, 248, 248);
+}
+
 #container-cursos{
     background-color: rgb(44, 43, 43);
     padding: 20px 0 20px 0;
@@ -90,6 +95,7 @@ header nav ul li a{
 
 #container-cursos img{
     width: 50%;
+    height: 300px;
     border-radius: 5px;
 }
 
@@ -115,19 +121,48 @@ header nav ul li a{
     letter-spacing: 0.4px;
 }
 
+/*CURSOS*/
+
+/*TRABAJOS*/
+#empleos{
+    background-color: rgb(248, 248, 248);
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+#empleos p{
+    text-align: center;
+}
+
+#titulo-empleos{
+    text-align: center;
+}
+
+#link{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/*TRABAJOS*/
+
 /*CONTACTO*/
+
+#seccion-contacto{
+    background-color:  rgb(248, 248, 248);
+}
 
 .form-container{
     display: flex;
     justify-content: center;
 }
 
-#form{
+.form-container h3{
     text-align: center;
 }
 
-#empleos{
+#form{
     text-align: center;
+    padding-bottom: 20px;
 }
 
 #button{
@@ -138,10 +173,9 @@ header nav ul li a{
     margin-bottom: 10px;
   }
   
-  .field label {
+.field label {
     display: block;
-    font-size: 12px;
-    color: #777;
+    color: #325C59;
   }
   
   .field input {
@@ -155,7 +189,29 @@ header nav ul li a{
     display: block;
     padding: 6px 30px;
     font-size: 14px;
-    background-color: rgb(44, 43, 43);
+    background-color: #325C59;
     color: #fff;
     border-radius: 1px;
   }
+
+/*FOOTER*/
+
+footer{
+    background-color:  rgb(248, 248, 248);
+    color: #325C59;
+    text-align: center;
+    padding-top: 10px;
+}
+
+footer p{
+    margin-bottom: 20px;
+}
+
+footer .spotify{
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+
+footer a{
+    color: #2C81A6;
+}

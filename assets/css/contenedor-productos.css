@@ -4,11 +4,15 @@ img {
 }
 #boton-carrito {
     border: none;
-    color: rgb(44, 43, 43);
+    color: #325C59;;
     font-size: 20px;
     background-color: white;
     border-radius: 50%;
     transition: all .3s;
+}
+
+#boton-carrito i{
+    color: #325C59;
 }
 #boton-carrito:hover {
     cursor: pointer;
@@ -20,9 +24,8 @@ img {
 
 #contenedor-productos {
     max-width: 1200px;
-    margin: 60px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -33,18 +36,17 @@ p {
     max-width: 250px;
     padding: 10px;
     margin-bottom: 20px;
-    box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 3px 2px 2px #869a99;
 }
 .precioProducto {
     font-weight: 700;
 }
 .boton-agregar {
-    background-color: rgb(44, 43, 43);
+    background-color: #325C59;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     padding: 5px;
-    border-radius: 1px;
-    margin-bottom: 15px;
+    border-radius: 5px;
 }
 .boton-agregar:hover {
     cursor: pointer;
